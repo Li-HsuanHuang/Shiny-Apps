@@ -1,6 +1,8 @@
 # This app seeks to show that the binomial distribution converges to Poisson when 
 # N the trial size is large and p small.  p = lambda/N.
 
+
+
 library(shiny)
 
 # Define UI for application that plots binomial and Poisson distributions.
@@ -31,26 +33,38 @@ ui <- fluidPage(
       mainPanel(
          h3('Plot'),
          plotOutput("plot"),
-         textOutput(outputId = 'description')
+         textOutput(outputId = 'description'),
+         downloadButton(outputId = 'downloadPlot', label = 'Download Plot')
       )
    )
 )
 
-# Define server logic required to draw a histogram
+# Define server logic required to draw the plot.
 server <- function(input, output) {
-   
-   output$plot <- renderPlot({
-     # Plot binomial and Poisson distributions
+   plot1 <- function(){
      par(mar=c(5.1, 4.1, 4.1, 8.1), xpd=TRUE)
      p = input$lambda/input$size
      plot(pbinom(0:100,input$size,p),pch=input$shape, cex=input$cex, cex.lab=1.5, xlab='x',ylab='Probability')
      lines(ppois(0:100,input$lambda),type = 'l',col='red',lwd = input$cex)
      legend('topright', inset=c(-0.35,0), legend=c('Binomial','Poisson'),pch=c(input$shape,NA),lty=c(NA,1),col=c('black','red'),title='Distribution')
+   }
+  
+   output$plot <- renderPlot({
+     plot1()
+     #print(p)
    })
    
    output$description <- renderText({
      paste0("The plot above shows size N = ", input$size, " and p = ", round(input$lambda/input$size,3), ".")
    })
+   
+   output$downloadPlot <- downloadHandler(
+     filename = 'BinomialPoissonPlot.pdf',
+     content = function(file){
+       pdf(file)
+       plot1()
+       dev.off()
+     })
 }
 
 # Run the application 
