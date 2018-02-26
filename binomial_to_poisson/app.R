@@ -43,7 +43,7 @@ server <- function(input, output) {
      # Plot binomial and Poisson distributions
      par(mar=c(5.1, 4.1, 4.1, 8.1), xpd=TRUE)
      p = input$lambda/input$size
-     plot(pbinom(0:100,input$size,p),pch=input$shape, cex=input$cex, cex.lab=1.5, xlab='Quantile',ylab='Probability')
+     plot(pbinom(0:100,input$size,p),pch=input$shape, cex=input$cex, cex.lab=1.5, xlab='x',ylab='Probability')
      lines(ppois(0:100,input$lambda),type = 'l',col='red',lwd = input$cex)
      legend('topright', inset=c(-0.35,0), legend=c('Binomial','Poisson'),pch=c(input$shape,NA),lty=c(NA,1),col=c('black','red'),title='Distribution')
    })
