@@ -9,7 +9,7 @@
 
 library(shiny)
 
-# Define UI for application that draws a histogram
+# Define UI for application that plots binomial and Poisson distributions.
 ui <- fluidPage(
    
    # Application title
@@ -46,7 +46,7 @@ ui <- fluidPage(
 server <- function(input, output) {
    
    output$plot <- renderPlot({
-      # generate bins based on input$bins from ui.R
+     # Plot binomial and Poisson distributions
      par(mar=c(5.1, 4.1, 4.1, 8.1), xpd=TRUE)
      p = input$lambda/input$size
      plot(pbinom(0:100,input$size,p),pch=input$shape, cex=input$cex, cex.lab=1.5, xlab='Quantile',ylab='Probability')
