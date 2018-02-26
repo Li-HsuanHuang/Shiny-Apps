@@ -1,5 +1,5 @@
 # This app seeks to show that the binomial distribution converges to Poisson when 
-# N the trial size is large and p small. 
+# N the trial size is large and p small.  p = lambda/N.
 
 library(shiny)
 
