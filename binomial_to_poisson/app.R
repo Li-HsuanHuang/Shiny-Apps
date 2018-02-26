@@ -4,10 +4,16 @@
 
 
 library(shiny)
+my_css <- "
+#downloadPlot {
+ /* Change the background color of the download button to orange. */
+ background: orange;
+}
+"
 
 # Define UI for application that plots binomial and Poisson distributions.
 ui <- fluidPage(
-   
+   tags$style(my_css),  
    # Application title
    titlePanel("Binomial to Poisson Distribution"),
    
