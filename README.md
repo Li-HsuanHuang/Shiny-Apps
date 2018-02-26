@@ -6,4 +6,4 @@ Use the following commands to run any of the Shiny apps in the repository.
 
 library(shiny)
 
-runGitHub('Shiny-Apps','Li-HsuanHuang',subdir = 'name of subdirectory')
+runGitHub('Shiny-Apps','Li-HsuanHuang',subdir = 'name of the subdirectory')
