@@ -17,7 +17,7 @@ background: orange;
 ui <- fluidPage(
   tags$style(my_css),  
   # Application title
-  titlePanel("Binomial to Poisson Distribution"),
+  titlePanel("Exam Statistics"),
   
   # Sidebar with a slider input for number of bins 
   sidebarLayout(
@@ -28,7 +28,7 @@ ui <- fluidPage(
     
     # Show a plot of the generated distribution
     mainPanel(
-      h3('Plot'),
+      h3('Boxplots'),
       conditionalPanel(
         condition = T,
       plotlyOutput("plot")),
