@@ -6,6 +6,8 @@
 
 library(shiny)
 library(plotly)
+library(dplyr)
+
 my_css <- "
 #downloadPlot {
 /* Change the background color of the download button to orange. */
