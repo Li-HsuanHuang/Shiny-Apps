@@ -55,7 +55,7 @@ server <- function(input, output) {
      p = input$lambda/input$size
      plot(pbinom(0:100,input$size,p),pch=input$shape, cex=input$cex, cex.lab=1.5, xlab='x',ylab='Probability')
      lines(ppois(0:100,input$lambda),type = 'l',col='red',lwd = input$cex)
-     legend('topright', inset=c(-0.15,0), legend=c('Binomial','Poisson'),pch=c(input$shape,NA),lty=c(NA,1),col=c('black','red'),title='Distribution')
+     legend('topright', inset=c(-0.25,0), legend=c('Binomial','Poisson'),pch=c(input$shape,NA),lty=c(NA,1),col=c('black','red'),title='Distribution')
    }
   
    output$plot <- renderPlot({
