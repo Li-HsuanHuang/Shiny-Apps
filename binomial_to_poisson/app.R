@@ -33,7 +33,7 @@ ui <- fluidPage(
                      step = 0.1),
          sliderInput('shape','Shape', min = 1, max = 25, value = 16),
          sliderInput('cex','Shape and line size',min = 1, max = 7, value = 1.5, step=0.1),
-         width = 3
+         width = 4
       ),
          
       # Show a plot of the generated distribution
@@ -42,7 +42,7 @@ ui <- fluidPage(
          plotOutput("plot"),
          textOutput(outputId = 'description'),
          downloadButton(outputId = 'downloadPlot', label = 'Download Plot'),
-         width = 9
+         width = 8
          
       )
    )
