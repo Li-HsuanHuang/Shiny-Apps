@@ -49,7 +49,7 @@ server <- function(input, output) {
       ind = which(X > Y)
       w = X
       w[ind] = Y[ind] 
-      plot(ecdf(w),pch=1,main='Max of 2 Uniform Distributions', xlab ='x',ylab ='Probability')
+      plot(ecdf(w),pch=1,main='Min of 2 Uniform Distributions', xlab ='x',ylab ='Probability')
       x = seq(0,1,length.out = N)
       y = 1 - (1 - x)^2
       lines(x,y,type='l',col='red',lwd = 2)
